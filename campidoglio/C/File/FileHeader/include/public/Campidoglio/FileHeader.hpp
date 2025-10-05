@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Campidoglio/File.hpp"
+#include <Campidoglio/File.hpp>
 
 namespace Campidoglio
 {
@@ -12,6 +12,9 @@ public:
   ~FileHeader();
   virtual void generate() override;
   virtual void content() = 0;
+
+  // sub class should just return true
+  virtual bool isUserDefined() const = 0;
 
 };
 

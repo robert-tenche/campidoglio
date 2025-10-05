@@ -8,7 +8,7 @@ namespace Campidoglio
 class FileHeaderGuardStart : public FileHeaderGuard
 {
 public:
-  virtual void generate() override;
+  FileHeaderGuardStart();
 };
 
 

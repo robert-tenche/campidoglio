@@ -1,4 +1,4 @@
-#include "Campidoglio/Campidoglio.hpp"
+#include <Campidoglio/Campidoglio.hpp>
 
 #include <format>
 #include <iostream>
@@ -6,9 +6,9 @@
 
 struct StdTypesH : public Campidoglio::FileHeader
 {
-  StdTypesH(const std::string& path = "") : Campidoglio::FileHeader(std::format("{}StdTypes.h", path))
-  {
-  }
+  virtual bool isUserDefined() const override { return true; }
+
+  StdTypesH(const std::string& path = "") : Campidoglio::FileHeader(std::format("{}StdTypes.h", path)) {}
 
   virtual void content() override
   {
@@ -18,12 +18,15 @@ struct StdTypesH : public Campidoglio::FileHeader
 
 struct StdTypesC : public Campidoglio::FileSource
 {
+  StdTypesH stdTypesH;
+
   StdTypesC(const std::string& path = "") : Campidoglio::FileSource(std::format("{}StdTypes.c", path))
   {
   }
 
   virtual void content() override
   {
+    Campidoglio::PPDir::include(stdTypesH);
   }
 
 };

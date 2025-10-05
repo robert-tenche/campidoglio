@@ -3,7 +3,7 @@
 namespace Campidoglio
 {
 
-std::string File::getFileName()
+std::string File::getFileName() const
 {
   return fileName_;
 }

@@ -2,6 +2,7 @@
 #include "Campidoglio/CampidoglioPrivate.hpp"
 #include "Campidoglio/FileHeaderGuardEnd.hpp"
 #include "Campidoglio/FileHeaderGuardStart.hpp"
+#include "Campidoglio/Message.hpp"
 
 namespace Campidoglio
 {
@@ -21,15 +22,15 @@ void FileHeader::generate()
 
   if (!out.is_open())
   {
-    throw std::runtime_error(std::format("Cannot open file: '{}'", filePath_.string()));
+    throw std::runtime_error(Message::cannotOpenFile(filePath_.string(), Message::ErrorLevel::ERROR));
   }
 
   CampidoglioPrivate::setFileAndOutputStreamContext(this, out);
 
   {
-    FileHeaderGuardStart start; start.generate();
+    FileHeaderGuardStart guardStart;
     content();
-    FileHeaderGuardEnd end; end.generate();
+    FileHeaderGuardEnd guardEnd;
   }
 
   out.close();

@@ -4,7 +4,7 @@
 namespace Campidoglio
 {
 
-void FileHeaderGuardStart::generate()
+FileHeaderGuardStart::FileHeaderGuardStart()
 {
   std::ofstream& outputStreamRef = CampidoglioPrivate::getCurrentOutputStreamRef();
   std::string fileName = CampidoglioPrivate::getCurrentFileRef().getFileName();
