@@ -24,7 +24,7 @@ void FileHeader::generate()
     throw std::runtime_error(std::format("Cannot open file: '{}'", filePath_.string()));
   }
 
-  CampidoglioPrivate::setContext(*this, out);
+  CampidoglioPrivate::setFileAndOutputStreamContext(this, out);
 
   {
     FileHeaderGuardStart start; start.generate();
