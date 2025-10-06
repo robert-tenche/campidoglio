@@ -12,4 +12,9 @@ DataTypeUnsignedLongInt::~DataTypeUnsignedLongInt()
 {
 }
 
+std::string DataTypeUnsignedLongInt::getTypeNameStr() const
+{
+  return "unsigned long int";
+}
+
 }

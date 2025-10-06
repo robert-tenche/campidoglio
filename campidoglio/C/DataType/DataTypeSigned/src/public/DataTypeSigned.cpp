@@ -12,4 +12,9 @@ DataTypeSigned::~DataTypeSigned()
 {
 }
 
+std::string DataTypeSigned::getTypeNameStr() const
+{
+  return "signed";
+}
+
 }

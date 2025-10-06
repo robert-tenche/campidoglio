@@ -12,4 +12,9 @@ DataTypeSignedShortInt::~DataTypeSignedShortInt()
 {
 }
 
+std::string DataTypeSignedShortInt::getTypeNameStr() const
+{
+  return "signed short int";
+}
+
 }

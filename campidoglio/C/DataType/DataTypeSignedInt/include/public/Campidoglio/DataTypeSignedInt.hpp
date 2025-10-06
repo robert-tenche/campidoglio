@@ -10,6 +10,7 @@ class DataTypeSignedInt : public Campidoglio::DataType
 public:
   DataTypeSignedInt();
   virtual ~DataTypeSignedInt();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

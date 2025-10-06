@@ -10,6 +10,7 @@ class DataTypeUnsignedInt : public Campidoglio::DataType
 public:
   DataTypeUnsignedInt();
   virtual ~DataTypeUnsignedInt();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

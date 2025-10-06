@@ -10,6 +10,7 @@ class DataTypeBool : public Campidoglio::DataType
 public:
   DataTypeBool();
   virtual ~DataTypeBool();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

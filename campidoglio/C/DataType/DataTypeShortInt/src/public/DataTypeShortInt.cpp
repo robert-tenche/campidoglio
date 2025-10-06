@@ -12,4 +12,9 @@ DataTypeShortInt::~DataTypeShortInt()
 {
 }
 
+std::string DataTypeShortInt::getTypeNameStr() const
+{
+  return "short int";
+}
+
 }

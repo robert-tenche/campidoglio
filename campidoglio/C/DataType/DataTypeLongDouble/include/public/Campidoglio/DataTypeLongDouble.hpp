@@ -10,6 +10,7 @@ class DataTypeLongDouble : public Campidoglio::DataType
 public:
   DataTypeLongDouble();
   virtual ~DataTypeLongDouble();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

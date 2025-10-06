@@ -12,4 +12,9 @@ DataTypeUnsignedLong::~DataTypeUnsignedLong()
 {
 }
 
+std::string DataTypeUnsignedLong::getTypeNameStr() const
+{
+  return "unsigned long";
+}
+
 }

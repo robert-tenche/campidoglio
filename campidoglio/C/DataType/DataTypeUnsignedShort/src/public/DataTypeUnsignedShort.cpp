@@ -12,4 +12,9 @@ DataTypeUnsignedShort::~DataTypeUnsignedShort()
 {
 }
 
+std::string DataTypeUnsignedShort::getTypeNameStr() const
+{
+  return "unsigned short";
+}
+
 }

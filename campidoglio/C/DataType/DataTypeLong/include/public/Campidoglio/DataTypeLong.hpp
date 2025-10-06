@@ -10,6 +10,7 @@ class DataTypeLong : public Campidoglio::DataType
 public:
   DataTypeLong();
   virtual ~DataTypeLong();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

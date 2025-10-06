@@ -12,4 +12,9 @@ DataTypeSignedLongLong::~DataTypeSignedLongLong()
 {
 }
 
+std::string DataTypeSignedLongLong::getTypeNameStr() const
+{
+  return "signed long long";
+}
+
 }

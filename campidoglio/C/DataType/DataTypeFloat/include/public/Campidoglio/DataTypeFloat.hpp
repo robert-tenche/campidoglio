@@ -10,6 +10,7 @@ class DataTypeFloat : public Campidoglio::DataType
 public:
   DataTypeFloat();
   virtual ~DataTypeFloat();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

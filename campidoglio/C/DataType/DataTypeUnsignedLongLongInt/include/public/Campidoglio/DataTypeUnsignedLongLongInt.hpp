@@ -10,6 +10,7 @@ class DataTypeUnsignedLongLongInt : public Campidoglio::DataType
 public:
   DataTypeUnsignedLongLongInt();
   virtual ~DataTypeUnsignedLongLongInt();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

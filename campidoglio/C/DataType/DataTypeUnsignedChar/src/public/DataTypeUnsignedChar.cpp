@@ -12,4 +12,9 @@ DataTypeUnsignedChar::~DataTypeUnsignedChar()
 {
 }
 
+std::string DataTypeUnsignedChar::getTypeNameStr() const
+{
+  return "unsigned char";
+}
+
 }

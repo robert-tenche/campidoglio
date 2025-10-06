@@ -12,4 +12,9 @@ DataTypeShort::~DataTypeShort()
 {
 }
 
+std::string DataTypeShort::getTypeNameStr() const
+{
+  return "short";
+}
+
 }

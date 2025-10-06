@@ -10,6 +10,7 @@ class DataTypeSignedShortInt : public Campidoglio::DataType
 public:
   DataTypeSignedShortInt();
   virtual ~DataTypeSignedShortInt();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }

@@ -12,4 +12,9 @@ DataTypeLongLong::~DataTypeLongLong()
 {
 }
 
+std::string DataTypeLongLong::getTypeNameStr() const
+{
+  return "long long";
+}
+
 }

@@ -2,42 +2,42 @@ import os, shutil
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 
-dataTypes = {
-  'Bool',
-  'Char',
-  'SignedChar',
-  'UnsignedChar',
-  'Short',
-  'ShortInt',
-  'SignedShort',
-  'SignedShortInt',
-  'UnsignedShort',
-  'UnsignedShortInt',
-  'Int',
-  'Signed',
-  'SignedInt',
-  'Unsigned',
-  'UnsignedInt',
-  'Long',
-  'LongInt',
-  'SignedLong',
-  'SignedLongInt',
-  'UnsignedLong',
-  'UnsignedLongInt',
-  'LongLong',
-  'LongLongInt',
-  'SignedLongLong',
-  'SignedLongLongInt',
-  'UnsignedLongLong',
-  'UnsignedLongLongInt',
-  'Float',
-  'Double',
-  'LongDouble',
-}
+dataTypes = [
+  [ 'bool'                    , 'Bool'                 ] ,
+  [ 'char'                    , 'Char'                 ] ,
+  [ 'signed char'             , 'SignedChar'           ] ,
+  [ 'unsigned char'           , 'UnsignedChar'         ] ,
+  [ 'short'                   , 'Short'                ] ,
+  [ 'short int'               , 'ShortInt'             ] ,
+  [ 'signed short'            , 'SignedShort'          ] ,
+  [ 'signed short int'        , 'SignedShortInt'       ] ,
+  [ 'unsigned short'          , 'UnsignedShort'        ] ,
+  [ 'unsigned short int'      , 'UnsignedShortInt'     ] ,
+  [ 'int'                     , 'Int'                  ] ,
+  [ 'signed'                  , 'Signed'               ] ,
+  [ 'signed int'              , 'SignedInt'            ] ,
+  [ 'unsigned'                , 'Unsigned'             ] ,
+  [ 'unsigned int'            , 'UnsignedInt'          ] ,
+  [ 'long'                    , 'Long'                 ] ,
+  [ 'long int'                , 'LongInt'              ] ,
+  [ 'signed long'             , 'SignedLong'           ] ,
+  [ 'signed long int'         , 'SignedLongInt'        ] ,
+  [ 'unsigned long'           , 'UnsignedLong'         ] ,
+  [ 'unsigned long int'       , 'UnsignedLongInt'      ] ,
+  [ 'long long'               , 'LongLong'             ] ,
+  [ 'long long int'           , 'LongLongInt'          ] ,
+  [ 'signed long long'        , 'SignedLongLong'       ] ,
+  [ 'signed long long int'    , 'SignedLongLongInt'    ] ,
+  [ 'unsigned long long'      , 'UnsignedLongLong'     ] ,
+  [ 'unsigned long long int'  , 'UnsignedLongLongInt'  ] ,
+  [ 'float'                   , 'Float'                ] ,
+  [ 'double'                  , 'Double'               ] ,
+  [ 'long double'             , 'LongDouble'           ] 
+]
 
 prefix='DataType'
 
-def addPublicFiles(absPath, folderName):
+def addPublicFiles(absPath, folderName, name):
   includeFilePath=os.path.join(absPath, 'include', 'public', 'Campidoglio')
   srcFilePath=os.path.join(absPath, 'src', 'public')
 
@@ -65,6 +65,7 @@ def addPublicFiles(absPath, folderName):
       "public:\n"
      f"  {className}();\n"
      f"  virtual ~{className}();\n"
+     f"  virtual std::string getTypeNameStr() const override;\n"
       "};\n"
 
 
@@ -93,11 +94,19 @@ def addPublicFiles(absPath, folderName):
 
       "\n"
 
+      f"std::string {className}::getTypeNameStr() const\n"
+      "{\n"
+      f"  return \"{name}\";\n"
+      "}\n"
+
+      "\n"
+
       "}\n"
     )
 
 for dataType in dataTypes:
-  folderName=prefix+dataType
+  name=dataType[0]
+  folderName=prefix+dataType[1]
   absPath=os.path.join(cwd, folderName)
 
   if os.path.exists(absPath):
@@ -105,5 +114,5 @@ for dataType in dataTypes:
 
   os.mkdir(absPath)
 
-  addPublicFiles(absPath, folderName)
+  addPublicFiles(absPath, folderName, name)
 

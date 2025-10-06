@@ -12,4 +12,9 @@ DataTypeFloat::~DataTypeFloat()
 {
 }
 
+std::string DataTypeFloat::getTypeNameStr() const
+{
+  return "float";
+}
+
 }

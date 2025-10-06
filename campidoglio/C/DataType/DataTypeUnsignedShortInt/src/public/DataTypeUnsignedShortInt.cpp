@@ -12,4 +12,9 @@ DataTypeUnsignedShortInt::~DataTypeUnsignedShortInt()
 {
 }
 
+std::string DataTypeUnsignedShortInt::getTypeNameStr() const
+{
+  return "unsigned short int";
+}
+
 }

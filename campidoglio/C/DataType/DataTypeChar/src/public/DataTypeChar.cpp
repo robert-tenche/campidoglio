@@ -12,4 +12,9 @@ DataTypeChar::~DataTypeChar()
 {
 }
 
+std::string DataTypeChar::getTypeNameStr() const
+{
+  return "char";
+}
+
 }

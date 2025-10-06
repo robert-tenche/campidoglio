@@ -36,5 +36,7 @@ int main()
   StdTypesH stdTypesH("./dbg/"); stdTypesH.generate();
   StdTypesC stdTypesC("./dbg/"); stdTypesC.generate();
 
+  Campidoglio::DataTypeLongLongInt booleano;
+
   return 0;
 }

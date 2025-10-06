@@ -12,4 +12,9 @@ DataTypeDouble::~DataTypeDouble()
 {
 }
 
+std::string DataTypeDouble::getTypeNameStr() const
+{
+  return "double";
+}
+
 }

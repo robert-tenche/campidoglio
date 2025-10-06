@@ -12,4 +12,9 @@ DataTypeBool::~DataTypeBool()
 {
 }
 
+std::string DataTypeBool::getTypeNameStr() const
+{
+  return "bool";
+}
+
 }

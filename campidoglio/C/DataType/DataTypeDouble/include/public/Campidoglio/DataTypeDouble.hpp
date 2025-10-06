@@ -10,6 +10,7 @@ class DataTypeDouble : public Campidoglio::DataType
 public:
   DataTypeDouble();
   virtual ~DataTypeDouble();
+  virtual std::string getTypeNameStr() const override;
 };
 
 }
