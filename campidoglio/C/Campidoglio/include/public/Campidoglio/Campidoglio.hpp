@@ -6,4 +6,4 @@
 
 #include <Campidoglio/FileHeader.hpp>
 #include <Campidoglio/FileSource.hpp>
-#include <Campidoglio/PPDirInclude.hpp>
+#include <Campidoglio/PPDir.hpp>

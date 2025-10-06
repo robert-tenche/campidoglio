@@ -1,0 +1,15 @@
+#include <Campidoglio/DataTypeChar.hpp>
+
+namespace Campidoglio
+{
+
+DataTypeChar::DataTypeChar()
+  : DataType()
+{
+}
+
+DataTypeChar::~DataTypeChar()
+{
+}
+
+}
