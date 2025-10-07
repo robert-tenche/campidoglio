@@ -4,6 +4,7 @@
 #include <string>
 #include <filesystem>
 #include <fstream>
+#include <cstdint>
 
 // DataType
 #include <Campidoglio/DataTypeBool.hpp>
@@ -41,5 +42,13 @@
 #include <Campidoglio/FileHeader.hpp>
 #include <Campidoglio/FileSource.hpp>
 
+// Literal
+#include <Campidoglio/LiteralCustom.hpp>
+#include <Campidoglio/LiteralIntBin.hpp>
+#include <Campidoglio/LiteralIntDec.hpp>
+#include <Campidoglio/LiteralIntHex.hpp>
+#include <Campidoglio/LiteralIntOct.hpp>
+
 // PPDir
 #include <Campidoglio/PPDir.hpp>
+
