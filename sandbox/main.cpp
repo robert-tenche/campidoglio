@@ -37,7 +37,9 @@ int main()
   StdTypesC stdTypesC("./dbg/"); stdTypesC.generate();
 
   Campidoglio::DataTypeLongLongInt booleano;
-  Campidoglio::LiteralCustom literalo("asd");
+  Campidoglio::LiteralIntBin literalo((uint8_t)-1);
+
+  std::cout << literalo.getValue() << std::endl;
 
   return 0;
 }

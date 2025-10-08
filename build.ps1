@@ -1,6 +1,8 @@
-cmake -S . -B _cmake_build -G "Unix Makefiles" -D LANG=C
+cmake -S . -B build -G "Unix Makefiles" -D LANG=C -D BUILD_TESTING=OFF
+if (!$?) { exit }
 
-cmake --build _cmake_build
+cmake --build build
+if (!$?) { exit }
 
-./_cmake_build/sandbox/sandbox.exe
+./build/sandbox/sandbox.exe
 
